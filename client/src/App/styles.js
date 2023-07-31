@@ -1,21 +1,20 @@
-import styled , {css} from 'styled-components';
+import styled from "styled-components";
 
-const Application = styled.div`
-    font-family: Roboto;
-    font-weight: 300;
-    font-size: 25px;
-    font-style: italic;
-    color: white;
-    top: 20%;
-    position: absolute;
-    padding: 50px;
-    svg, span {
-        padding-left: 10px;
-    }
-`;
+// const Application = styled.div`
+//     font-family: Roboto;
+//     font-weight: 300;
+//     font-size: 25px;
+//     font-style: italic;
+//     color: white;
+//     top: 20%;
+//     position: absolute;
+//     padding: 50px;
+//     svg, span {
+//         padding-left: 10px;
+//     }
+// `;
 
-
-  const StyledTable = styled.table`
+export const StyledTable = styled.table`
   caption-side: top;
   border: none;
   border-collapse: collapse;
@@ -36,6 +35,7 @@ const Application = styled.div`
   td,
   th {
     border: none;
+    width: 100%;
   }
   /* td,
   th {
@@ -48,7 +48,7 @@ const Application = styled.div`
 
   tbody tr {
     :nth-of-type(odd) {
-      background-color: black;
+      background-color: green;
     }
     :hover {
       background-color: lightpink;
@@ -68,21 +68,21 @@ export const StyledForm = styled.form`
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 5px;
-`
+`;
 
 export const StyledLabel = styled.label`
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: ${props => props.invalid ? 'red' : 'black'};
-`
+  color: ${(props) => (props.invalid ? "red" : "black")};
+`;
 
 export const StyledInput = styled.input`
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-`
+`;
 
 export const StyledButton = styled.button`
   background-color: #4caf50;
@@ -96,12 +96,27 @@ export const StyledButton = styled.button`
     opacity: 0.5;
   }
   &:enabled {
-    opacity: 1.0;
+    opacity: 1;
   }
-  opacity: ${props => !props.enabled ? 0.5 : 1};
-`
-
-
-
-export {
-    Application, StyledTable};
+  opacity: ${(props) => (!props.enabled ? 0.5 : 1)};
+`;
+export const Logo = styled.img`
+  width: 200px;
+  height: 200px;
+  margin: 0px;
+`;
+export const SelectLabelButton = styled.select`
+  width: 96.5%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  option {
+    color: inherit;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  
+}
+`;
